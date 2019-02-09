@@ -768,6 +768,14 @@ struct msm_vfe_common_subdev {
 	struct msm_vfe_common_dev_data *common_data;
 };
 
+struct isp_proc {
+	uint32_t  kernel_sofid;
+	uint32_t drop_reconfig;
+	uint32_t  vfeid;
+	uint32_t dual_cam_drop_detected;
+	uint32_t dual_cam_drop;
+};
+
 struct vfe_device {
 	/* Driver private data */
 	struct platform_device *pdev;
@@ -852,7 +860,7 @@ struct vfe_device {
 	uint32_t recovery_irq1_mask;
 	/* total bandwidth per vfe */
 	uint64_t total_bandwidth;
-	struct isp_kstate *isp_page;
+	struct isp_proc *isp_page;
 
 	/* irq info */
 	uint32_t irq_sof_id;
