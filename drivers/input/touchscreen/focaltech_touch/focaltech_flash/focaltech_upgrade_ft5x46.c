@@ -194,9 +194,9 @@ static int fts_ft5x46_get_i_file(struct i2c_client *client, int fw_valid)
 	}
 #else
 	/* (FTS_GET_VENDOR_ID_NUM == 0) */
-	g_fw_file = CTPM_FW;
+	/* g_fw_file = CTPM_FW;
 	g_fw_len = fts_getsize(FW_SIZE);
-	FTS_DEBUG("[UPGRADE]FW FILE:CTPM_FW, SIZE:%x", g_fw_len);
+	FTS_DEBUG("[UPGRADE]FW FILE:CTPM_FW, SIZE:%x", g_fw_len); */
 #endif
 
 	return ret;
