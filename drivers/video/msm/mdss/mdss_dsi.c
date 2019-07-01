@@ -1870,7 +1870,8 @@ static int mdss_dsi_pinctrl_init(struct platform_device *pdev)
 	return 0;
 }
 
-extern int  first_gamma_state, set_gamma;
+extern int  set_gamma;
+extern bool first_gamma_state;
 extern int ce_state;
 
 static int mdss_dsi_unblank(struct mdss_panel_data *pdata)
