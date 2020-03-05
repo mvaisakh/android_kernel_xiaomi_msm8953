@@ -167,21 +167,30 @@
 };
 
 &mdss_dsi0 {
+    qcom,regulator-ldo-mode;
 	qcom,dsi-pref-prim-pan = <&dsi_truly_720_vid>;
 	pinctrl-names = "mdss_default", "mdss_sleep";
 	pinctrl-0 = <&mdss_dsi_active &mdss_te_active>;
 	pinctrl-1 = <&mdss_dsi_suspend &mdss_te_suspend>;
 	qcom,platform-te-gpio = <&tlmm 24 0>;
 	qcom,platform-reset-gpio = <&tlmm 60 0>;
-	qcom,platform-bklight-en-gpio = <&tlmm 98 0>;
+	//qcom,platform-bklight-en-gpio = <&tlmm 98 0>;
 };
 
-&dsi_truly_720_vid {
+&dsi_truly_hd720_vid {
 	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
 	qcom,mdss-dsi-min-refresh-rate = <48>;
 	qcom,mdss-dsi-max-refresh-rate = <60>;
-	qcom,mdss-dsi-pan-enable-dynamic-fps;
-	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
+	//qcom,mdss-dsi-pan-enable-dynamic-fps;
+	//qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
+};
+
+&dsi_sc_ili9881c_hd720_video{
+	//qcom,mdss-dsi-bl-min-level = <1>;
+	//qcom,mdss-dsi-bl-max-level = <255>;
+	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
+	//qcom,mdss-dsi-pan-enable-dynamic-fps;
+	//qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
 };
 
 &dsi_truly_720_cmd {
