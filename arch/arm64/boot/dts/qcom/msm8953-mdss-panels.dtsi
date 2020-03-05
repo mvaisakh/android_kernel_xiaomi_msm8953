@@ -24,10 +24,13 @@
 #include "dsi-panel-lt8912-480p-video.dtsi"
 #include "dsi-panel-lt8912-1080p-video.dtsi"
 #include "dsi-panel-hx8399c-fhd-plus-video.dtsi"
-#include "dsi-panel-hx83100a-800p-video.dtsi"
 #include "dsi-panel-boent51021-1200p-video.dtsi"
 #include "dsi-panel-hx8394d-wxga-video.dtsi"
 #include "dsi-panel-inxnt51021-1200p-video.dtsi"
+
+#include "dsi-panel-truly-hd720-video.dtsi"
+#include "dsi-panel-auo-hd720-video.dtsi"
+#include "dsi-panel-shenchao-ili9881c-hd720-video.dtsi"
 
 &soc {
 	dsi_panel_pwr_supply: dsi_panel_pwr_supply {
@@ -71,6 +74,22 @@
 	};
 };
 
+&dsi_truly_hd720_vid {
+	qcom,mdss-dsi-panel-timings-phy-v2 = [1e 1c 04 06 02 03 04 a0
+		1e 1c 04 06 02 03 04 a0
+		1e 1c 04 06 02 03 04 a0
+		1e 1c 04 06 02 03 04 a0
+		1e 0f 04 05 02 03 04 a0];
+};
+
+&dsi_auo_hd720_vid {
+	qcom,mdss-dsi-panel-timings-phy-v2 = [20 1c 06 07 03 03 04 a0
+         20 1c 06 07 03 03 04 a0
+         20 1c 06 07 03 03 04 a0
+         20 1c 06 07 03 03 04 a0
+         20 13 05 06 03 03 04 a0];
+};
+
 &dsi_truly_1080_vid {
 	qcom,mdss-dsi-panel-timings-phy-v2 = [23 1e 08 09 05 03 04 a0
 		23 1e 08 09 05 03 04 a0
@@ -86,6 +105,14 @@
 	qcom,mdss-dsi-panel-status-read-length = <1>;
 	qcom,mdss-dsi-panel-max-error-count = <3>;
 
+};
+
+&dsi_sc_ili9881c_hd720_video {
+        qcom,mdss-dsi-panel-timings-phy-v2 = [1f 1c 05 07 03 03 04 a0
+         1f 1c 05 07 03 03 04 a0
+         1f 1c 05 07 03 03 04 a0
+         1f 1c 05 07 03 03 04 a0
+         1f 11 05 06 03 03 04 a0];
 };
 
 &dsi_truly_1080_cmd {
@@ -169,14 +196,6 @@
 		24 1f 08 09 05 03 04 a0
 		24 1f 08 09 05 03 04 a0
 		24 1c 08 09 05 03 04 a0];
-};
-
-&dsi_boyi_hx83100a_800p_video {
-	qcom,mdss-dsi-panel-timings-phy-v2 = [1f 1c 05 06 03 03 04 a0
-		1f 1c 05 06 03 03 04 a0
-		1f 1c 05 06 03 03 04 a0
-		1f 1c 05 06 03 03 04 a0
-		1f 10 05 06 03 03 04 a0];
 };
 
 &dsi_boent51021_1200p_video {
