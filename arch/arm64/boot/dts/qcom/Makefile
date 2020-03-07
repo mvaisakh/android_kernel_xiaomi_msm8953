@@ -1,12 +1,10 @@
+ifeq ($(CONFIG_YSL),y)
+dtb-$(CONFIG_ARCH_MSM8953) += ysl_msm8953.dtb
+else
+
 dtb-$(CONFIG_ARCH_QCOM)	+= apq8016-sbc.dtb msm8916-mtp.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= msm8996-mtp.dtb
 dtb-$(CONFIG_ARCH_QCOM)	+= apq8096-db820c.dtb
-
-dtb-$(CONFIG_ARCH_MSM8953) += msm8953-sim.dtb \
-        msm8953-rumi.dtb \
-        ysl_msm8953.dtb \
-        msm8953-ext-codec-mtp.dtb \
-        msm8953-qrd-sku3.dtb
 
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 	dtbo-$(CONFIG_ARCH_SDM845) += \
@@ -671,6 +669,7 @@ dtb-$(CONFIG_ARCH_SDM429) += sdm429-mtp.dtb \
 endif
 
 dtb-$(CONFIG_ARCH_SDM845_VM) += sdm845-vm.dtb
+endif
 
 always		:= $(dtb-y)
 subdir-y	:= $(dts-dirs)
