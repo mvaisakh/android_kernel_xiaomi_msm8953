@@ -68,7 +68,7 @@
 		gpios = <&tlmm 26 0>,
 			<&tlmm 40 0>,
 			<&tlmm 23 0>,
-		qcom,gpio-reset = <1>;
+//		qcom,gpio-reset = <1>;
 		qcom,gpio-vana = <2>;
 		qcom,gpio-req-tbl-num = <0 1 2>;
 		qcom,gpio-req-tbl-flags = <1 0 0>;
