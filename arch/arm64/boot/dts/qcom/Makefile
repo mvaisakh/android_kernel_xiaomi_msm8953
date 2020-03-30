@@ -1,5 +1,5 @@
 ifeq ($(CONFIG_YSL),y)
-dtb-$(CONFIG_ARCH_MSM8953) += ysl_msm8953.dtb
+dtb-$(CONFIG_ARCH_MSM8953) += ysl_msm8953.dtb msm8953-ext-codec-mtp.dtb msm8953-qrd-sku3.dtb
 else
 
 dtb-$(CONFIG_ARCH_QCOM)	+= apq8016-sbc.dtb msm8916-mtp.dtb
