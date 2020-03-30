@@ -211,14 +211,16 @@
 };
 
 &mdss_dsi0 {
+    qcom,regulator-ldo-mode;
 	qcom,dsi-pref-prim-pan = <&dsi_sc_ili9881c_hd720_video>;
 	pinctrl-names = "mdss_default", "mdss_sleep";
-	pinctrl-0 = <&mdss_dsi_active &mdss_te_active>;
-	pinctrl-1 = <&mdss_dsi_suspend &mdss_te_suspend>;
+	pinctrl-0 = <&mdss_dsi_active >;
+	pinctrl-1 = <&mdss_dsi_suspend>;
 
-	qcom,platform-te-gpio = <&tlmm 24 0>;
-		qcom,platform-reset-gpio = <&tlmm 61 0>;
-	qcom,platform-bklight-en-gpio = <&tlmm 59 0>;
+	qcom,platform-reset-gpio = <&tlmm 60 0>;
+	qcom,platform-bklight-en-gpio = <&tlmm 93 0>;
+    qcom,ocp2131-enp-gpio = <&tlmm 12 0>;
+	qcom,ocp2131-enn-gpio = <&tlmm 13 0>;
 };
 
 &mdss_dsi1 {
@@ -236,6 +238,8 @@
 
 &dsi_truly_hd720_vid {
 	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
+    qcom,mdss-dsi-min-refresh-rate = <48>;
+	qcom,mdss-dsi-max-refresh-rate = <60>;
 	//	qcom,mdss-dsi-pan-enable-dynamic-fps;
 //	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_clk_mode";
 };
