@@ -30,12 +30,6 @@
 	};
 };
 
-&cci {
-	qcom,camera@2 {
-			qcom,led-flash-src = <&led_flash1>;
-	};
-};
-
 &usb3 {
 	vbus_dwc3-supply = <&smbcharger_charger_otg>;
 	extcon = <&qpnp_smbcharger>;
