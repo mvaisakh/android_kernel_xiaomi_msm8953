@@ -29,6 +29,7 @@
 		qcom,switch-source = <&pmi8940_switch>;
 	};
 };
+
 &cci {
 	qcom,camera@2 {
 			qcom,led-flash-src = <&led_flash1>;
